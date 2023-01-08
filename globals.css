@@ -1,0 +1,39 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+/* The following line is used to measure usage of this code in production. For more info see our usage billing page */
+@import url("https://px.animaapp.com/63968d9ff3f4ed367d7e7660.63968da05901d6df33d80855.63b46cecc66dd5bad49a3855.hcp.png");
+
+@font-face {
+  font-family: "Gilroy-Light";
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://fonts.animaapp.com/Gilroy-Light") format("opentype");
+}
+
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.valign-text-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+* {
+  box-sizing: border-box;
+}

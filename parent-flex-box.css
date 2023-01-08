@@ -1,0 +1,247 @@
+/* screen - parent-flex-box */
+
+.parent-flex-box {
+  align-items: flex-start;
+  background-color: var(--csk---2e509050);
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  height: 832px;
+  overflow: hidden;
+  width: 1280px;
+}
+
+.parent-flex-box .frame-35 {
+  height: 97px;
+  justify-content: space-between;
+  padding: 10px 50px;
+}
+
+.parent-flex-box .group-2 {
+  display: flex;
+  gap: 10.7px;
+  height: 32px;
+  min-width: 299px;
+}
+
+.parent-flex-box .vector-1 {
+  display: block;
+  height: 32px;
+  margin-left: 0;
+  opacity: 0;
+  transform: rotate(180);
+  width: 32px;
+}
+
+.parent-flex-box .vector-1.animate-enter {
+  animation: animate-enter-frames 1.00s ease-in-out 0.00s 1 normal forwards;
+  display: block;
+  opacity: 0;
+  transform: rotate(25deg);
+}
+
+@keyframes animate-enter-frames {
+  from{opacity: 0;
+transform: rotate(25deg);
+}
+to{opacity: 1;
+transform: rotate(0);
+}
+}
+
+.parent-flex-box .vector-2 {
+  height: 22.6px;
+  margin-top: 4.9px;
+  width: 256.32px;
+}
+
+.parent-flex-box .group-5 {
+  height: 16px;
+  min-width: 264px;
+}
+
+.parent-flex-box .button-container-group-5 {
+  gap: 36px;
+  min-width: 264px;
+}
+
+.parent-flex-box .button-1 {
+  height: 16px;
+  width: 45px;
+}
+
+.parent-flex-box .nav-1 {
+  margin-left: -5.50px;
+  margin-right: -5.50px;
+  margin-top: -1.50px;
+  width: fit-content;
+}
+
+.parent-flex-box .button-2 {
+  height: 16px;
+  width: 68px;
+}
+
+.parent-flex-box .nav-2 {
+  margin-left: -4.50px;
+  margin-right: -4.50px;
+  margin-top: -1.50px;
+  width: fit-content;
+}
+
+.parent-flex-box .button-3 {
+  height: 16px;
+  width: 79px;
+}
+
+.parent-flex-box .nav-3 {
+  margin-left: -5.50px;
+  margin-right: -5.50px;
+  margin-top: -1.50px;
+  width: fit-content;
+}
+
+.parent-flex-box .group-4 {
+  height: 22px;
+  min-width: 76px;
+}
+
+.parent-flex-box .button-container-group-4 {
+  gap: 14px;
+  min-width: 76px;
+}
+
+.parent-flex-box .button-4 {
+  height: 22px;
+  width: 18px;
+}
+
+.parent-flex-box .nav-4 {
+  height: 17px;
+  margin-left: -11.50px;
+  margin-right: -11.50px;
+  width: 31px;
+}
+
+.parent-flex-box .button-5 {
+  height: 22px;
+  width: 7px;
+}
+
+.parent-flex-box .nav-5 {
+  margin-left: -4.00px;
+  margin-right: -4.00px;
+  width: fit-content;
+}
+
+.parent-flex-box .button-6 {
+  align-self: flex-end;
+  height: 22px;
+  width: 23px;
+}
+
+.parent-flex-box .nav-6 {
+  margin-left: -2.00px;
+  margin-right: -2.00px;
+  width: fit-content;
+}
+
+.parent-flex-box .overlap-group1 {
+  height: 678px;
+  margin-left: 2px;
+  position: relative;
+  width: 1280px;
+}
+
+.parent-flex-box .component-1 {
+  align-items: flex-start;
+  display: flex;
+  height: 678px;
+  left: 48px;
+  min-width: 1230px;
+  position: absolute;
+  top: 0;
+}
+
+.parent-flex-box .overlap-group {
+  height: 679px;
+  margin-top: -1px;
+  position: relative;
+  width: 1230px;
+}
+
+.parent-flex-box .photo-1 {
+  height: 678px;
+  left: 468px;
+  mix-blend-mode: darken;
+  position: absolute;
+  top: 1px;
+  width: 762px;
+}
+
+.parent-flex-box .pardon-my-dust-my-p {
+  color: var(--csk---2e5090900);
+  font-family: var(--font-family-gilroy-light);
+  font-size: var(--font-size-xxxxl);
+  font-weight: 300;
+  height: 678px;
+  left: 0;
+  letter-spacing: 2.30px;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  width: 707px;
+}
+
+.parent-flex-box .rectangle-2 {
+  background-color: var(--csk---2e5090200);
+  height: 678px;
+  left: 0;
+  mix-blend-mode: overlay;
+  opacity: 0.66;
+  position: absolute;
+  top: 0;
+  width: 1280px;
+}
+
+.parent-flex-box .frame-36 {
+  gap: 10px;
+  justify-content: space-around;
+  padding: 20px 556px;
+}
+
+.parent-flex-box .copyright {
+  letter-spacing: 0.90px;
+  line-height: 17px;
+  margin-top: -1.00px;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.parent-flex-box .button {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 0px 5px;
+}
+
+.parent-flex-box .button-container-group {
+  align-items: flex-start;
+  display: flex;
+}
+
+.parent-flex-box .frame {
+  align-items: center;
+  background-color: var(--csk---2e5090900);
+  display: flex;
+  width: 1280px;
+}
+
+.parent-flex-box .nav {
+  letter-spacing: 0.90px;
+  line-height: 17px;
+  text-align: center;
+  white-space: nowrap;
+}

@@ -1,0 +1,18 @@
+:root { 
+  --black: #000000;
+  --csk---2e5090200: #b2c4e6;
+  --csk---2e509050: #fafbfd;
+  --csk---2e5090900: #0c1627;
+ 
+  --font-size-m: 15px;
+  --font-size-xxxxl: 46px;
+ 
+  --font-family-gilroy-light: "Gilroy-Light", Helvetica;
+}
+.gilroy-light-alabaster-15px {
+  color: var(--csk---2e509050);
+  font-family: var(--font-family-gilroy-light);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 300;
+}

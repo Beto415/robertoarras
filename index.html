@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1280, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="parent-flex-box.css" />
+    <link rel="stylesheet" type="text/css" href="styleguide.css" />
+    <link rel="stylesheet" type="text/css" href="globals.css" />
+  </head>
+  <body style="margin: 0; background: #fafbfd">
+    <input type="hidden" id="anPageName" name="page" value="parent-flex-box" />
+    <div class="container-center-horizontal">
+      <div class="parent-flex-box screen">
+        <div class="frame-35 frame">
+          <div class="group-2">
+            <img class="vector-1 animate-enter" src="img/vector-1@2x.png" alt="Vector" />
+            <img class="vector-2" src="img/vector@2x.png" alt="Vector" />
+          </div>
+          <div class="group-5">
+            <div class="button-container-group-5 button-container-group">
+              <div class="button-1 button">
+                <div class="nav-1 valign-text-middle nav gilroy-light-alabaster-15px">HOME</div>
+              </div>
+              <div class="button-2 button">
+                <div class="nav-2 valign-text-middle nav gilroy-light-alabaster-15px">GALLERY</div>
+              </div>
+              <div class="button-3 button">
+                <div class="nav-3 valign-text-middle nav gilroy-light-alabaster-15px">PROJECTS</div>
+              </div>
+            </div>
+          </div>
+          <div class="group-4">
+            <div class="button-container-group-4 button-container-group">
+              <div class="button-4 button">
+                <div class="nav-4 valign-text-middle nav gilroy-light-alabaster-15px">in</div>
+              </div>
+              <div class="button-5 button">
+                <div class="nav-5 valign-text-middle nav gilroy-light-alabaster-15px">f</div>
+              </div>
+              <div class="button-6 button">
+                <div class="nav-6 valign-text-middle nav gilroy-light-alabaster-15px">IG</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="overlap-group1">
+          <div class="component-1">
+            <div class="overlap-group">
+              <img class="photo-1" src="img/photo-1@1x.png" alt="photo 1" />
+              <h1 class="pardon-my-dust-my-p valign-text-middle">
+                Pardon my dust,<br />my portfolio will be <br />back shortly...
+              </h1>
+            </div>
+          </div>
+          <div class="rectangle-2"></div>
+        </div>
+        <div class="frame-36 frame">
+          <div class="copyright valign-text-middle gilroy-light-alabaster-15px">
+            <span
+              ><span class="gilroy-light-alabaster-15px">© 2023 R</span
+              ><span class="gilroy-light-alabaster-15px">oberto Arras</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function ShowOnScroll() {
+        this.toShow = [];
+        this.nextEventY = undefined;
+      }
+
+      ShowOnScroll.prototype.show = function (e) {
+        e.style.display = "";
+      };
+
+      ShowOnScroll.prototype.hide = function (e) {
+        e.style.display = "none";
+      };
+
+      ShowOnScroll.prototype.getTop = function (e) {
+        if (e.Top != undefined && e.Top != 0) {
+          return e.Top;
+        }
+        var top = 0;
+        var iter = e;
+        do {
+          top += iter.offsetTop || 0;
+          iter = iter.offsetParent;
+        } while (iter);
+        e.Top = top;
+        return top;
+      };
+
+      ShowOnScroll.prototype.onScroll = function () {
+        var screenBottom = window.pageYOffset + window.innerHeight;
+        if (this.nextEventY == undefined || this.nextEventY > screenBottom) {
+          return;
+        }
+        this.nextEventY = undefined;
+        for (var i = 0; i < this.toShow.length; i++) {
+          var e = this.toShow[i];
+          var top = this.getTop(e);
+          if (top < screenBottom) {
+            this.show(e);
+            this.toShow.shift();
+            i--;
+          } else {
+            this.nextEventY = top;
+            break;
+          }
+        }
+      };
+
+      ShowOnScroll.prototype.resetScrolling = function () {
+        // Clear state
+        var screenBottom = window.pageYOffset + window.innerHeight;
+        for (var i = 0; i < this.toShow.length; i++) {
+          var e = this.toShow[i];
+          this.show(e);
+        }
+        this.toShow = [];
+        this.nextEventY == undefined;
+
+        // Collect items
+        var itemsToShowOnScroll = Array.prototype.slice.call(document.getElementsByTagName("*"));
+        itemsToShowOnScroll = itemsToShowOnScroll.filter(function (e) {
+          return e.getAttribute("show-on-scroll") != undefined;
+        });
+        var getTop = this.getTop;
+        itemsToShowOnScroll.sort(function (a, b) {
+          return getTop(a) - getTop(b);
+        });
+        for (var i = 0; i < itemsToShowOnScroll.length; i++) {
+          var e = itemsToShowOnScroll[i];
+          var top = this.getTop(e);
+          if (top < screenBottom) {
+            continue;
+          }
+          this.toShow.push(e);
+          this.hide(e);
+          this.nextEventY = this.nextEventY != undefined ? this.nextEventY : top;
+        }
+      };
+
+      ShowOnScroll.prototype.handleEvent = function (e) {
+        switch (e.type) {
+          case "scroll":
+            this.onScroll();
+            break;
+          case "resize":
+            this.resetScrolling();
+            break;
+        }
+      };
+
+      ShowOnScroll.prototype.init = function () {
+        this.resetScrolling();
+        window.addEventListener("scroll", this);
+        window.addEventListener("resize", this);
+      };
+
+      // After anima-src
+      setTimeout(function () {
+        var instShowOnScroll = new ShowOnScroll();
+        instShowOnScroll.init();
+      }, 250);
+    </script>
+  </body>
+</html>
